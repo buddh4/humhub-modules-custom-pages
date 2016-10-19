@@ -1,6 +1,6 @@
 <?php
 /**
- * This is the initial test bootstrap, which will load the default test bootstrap from the humhub core
+ * This is the initial test bootstrap, which will load the default bootstrap file from the humhub core
  */
 
 $testRoot = dirname(__DIR__);
@@ -8,7 +8,7 @@ $testRoot = dirname(__DIR__);
 
 $humhubPath = getenv("HUMHUB_PATH");
 
-// If no environment path was set, we assume residing in default the modules directory
+// If no environment path was set, we assume residing in the default modules directory
 if($humhubPath == null) {
     $testCfg = require_once($testRoot.'/config/test.php');
     if(isset($testCfg['humhub_root'])) {
