@@ -4,7 +4,7 @@
  */
 return [
     'params' => [
-        'moduleAutoloadPaths' => ['D:\codebase\humhub\modules'],
+        'moduleAutoloadPaths' => ['/home/travis/build/buddha87'],
         'allowedLanguages' => ['en']
     ]
 ];
