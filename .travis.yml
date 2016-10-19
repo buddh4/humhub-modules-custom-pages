@@ -56,7 +56,7 @@ script:
   - curl http://127.0.0.1:8080/index-test.php
   - |
     cd ../humhub-modules-custom-pages/tests/
-    codecept run unit
+    codecept run acceptance
 
 after_failure:
   # ls
