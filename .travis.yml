@@ -53,14 +53,14 @@ script:
   - sleep 5
   - curl http://127.0.0.1:8080/index-test.php
   - |
-    cd protected/humhub/tests/
+    cd ../tests/
     codecept run
 
 after_failure:
-  - ls
-  - pwd
-  - cd ../modules/user/tests/codeception/_output/
-  - ls
-  - cat user.functional.LoginCest.testUserLogin.fail.html
+  # ls
+  # pwd
+  # cd ../modules/user/tests/codeception/_output/
+  # ls
+  # cat user.functional.LoginCest.testUserLogin.fail.html
   #cat ../modules/*/tests/codeception/_output/*.html
     
