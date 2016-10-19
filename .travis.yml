@@ -24,9 +24,11 @@ before_install:
   - echo "extension=ldap.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
 
 install:
+  - cd ..
+  - pwd
+  - ls
   - git clone -b v1.2-dev --single-branch https://github.com/humhub/humhub.git
   - ls 
-  - pwd
   - export HUMHUB_PATH="$PWD"/humhub
   - echo $HUMHUB_PATH
   - cd humhub
