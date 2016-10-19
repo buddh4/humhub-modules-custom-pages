@@ -24,6 +24,10 @@ before_install:
   - echo "extension=ldap.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
 
 install:
+  - wget http://chromedriver.storage.googleapis.com/2.10/chromedriver_linux64.zip
+  - unzip chromedriver_linux64.zip -d ./
+  - ls
+  - export CHROME_BIN=chromium-browser
   - export CHROME_BIN=chromium-browser
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
@@ -31,7 +35,7 @@ install:
   - echo "Download selenium-server-standalone jar file"
   - wget -c -nc --retry-connrefused --tries=0 http://goo.gl/EoH85x -O selenium-server-standalone.jar
   - echo "Run selenium server - background process"
-  - nohup bash -c "java -jar selenium-server-standalone.jar &" && sleep 1; cat nohup.out
+  - nohup bash -c "java -Dwebdriver.chrome.driver=chromedriver -jar selenium-server-standalone.jar &" && sleep 1; cat nohup.out
   - cd ..
   - git clone -b v1.2-dev --single-branch https://github.com/buddha87/humhub.git
   - export HUMHUB_PATH="$PWD"/humhub
