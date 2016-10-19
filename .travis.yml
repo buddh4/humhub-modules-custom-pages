@@ -29,6 +29,7 @@ install:
   - pwd
   - export HUMHUB_PATH="$PWD"/humhub
   - echo $HUMHUB_PATH
+  - cd humhub
   - travis_retry composer self-update && composer --version
   - travis_retry composer global require "fxp/composer-asset-plugin:~1.1.0"
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
