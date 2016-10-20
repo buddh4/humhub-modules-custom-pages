@@ -7,7 +7,7 @@ use custom_pages\AcceptanceTester;
 class CreateTemplatePageCest
 {
     
-    public function testCreateTemplatePage(AcceptanceTester $I)
+    public function testCreateMarkdownPageOnTopMenu(AcceptanceTester $I)
     {
         $I->amAdmin();
         $I->wantToTest('the creation of a template page');
@@ -49,8 +49,6 @@ class CreateTemplatePageCest
         $I->fillField('TemplateElement[name]', 'image');
         //Workaround
         $I->jsShow('.uploadElementImage', 'type');
-        
-        $I->wait(2);
         $I->attachFile('.uploadElementImage', 'test.jpg');
         $I->click('.collapsableTrigger'); //Show more
         $I->wait(2);
