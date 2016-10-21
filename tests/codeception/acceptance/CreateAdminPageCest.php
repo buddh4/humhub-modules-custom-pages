@@ -3,12 +3,19 @@ namespace custom_pages\acceptance;
 
 
 use custom_pages\AcceptanceTester;
+use tests\codeception\_pages\LoginPage;
 
 class CreateAdminPageCest
 {
     
     public function testCreateMarkdownPageOnTopMenu(AcceptanceTester $I)
     {
+        LoginPage::openBy($I);
+        $I->fillField('Login[username]', 'asdf');
+        $I->fillField('Login[password]', 'asdf');
+        
+        $I->see('asdfasdfasdfsadf');
+        
         $I->amAdmin();
         $I->wantToTest('the creation of a markdown page');
         $I->amGoingTo('add a new page');
