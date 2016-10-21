@@ -71,10 +71,10 @@ script:
     codecept run
 
 after_failure:
-   ls
-   pwd
-   cd codeception/_output/
-   ls
-   cat acceptance.CreateAdminPageCest.testCreateHtmlPage.fail.html
+   - ls
+   - pwd
+   - cd codeception/_output/
+   - ls
+   - cat acceptance.CreateAdminPageCest.testCreateHtmlPage.fail.html
    #cat ../modules/*/tests/codeception/_output/*.html
     
