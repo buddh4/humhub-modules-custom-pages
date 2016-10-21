@@ -35,7 +35,8 @@ install:
   - echo "Download selenium-server-standalone jar file"
   - wget -c -nc --retry-connrefused --tries=0 http://goo.gl/EoH85x -O selenium-server-standalone.jar
   - echo "Run selenium server - background process"
-  - nohup bash -c "java -Dwebdriver.chrome.driver=chromedriver -jar selenium-server-standalone.jar &" && sleep 1; cat nohup.out
+  #- nohup bash -c "java -Dwebdriver.chrome.driver=chromedriver -jar selenium-server-standalone.jar &" && sleep 1; cat nohup.out
+  - nohup bash -c "java -jar selenium-server-standalone.jar &" && sleep 1; cat nohup.out
   # Load git repository
   - cd ..
   - git clone -b v1.2-dev --single-branch https://github.com/buddha87/humhub.git
