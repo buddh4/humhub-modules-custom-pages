@@ -20,6 +20,7 @@ class SnippetWidget extends \yii\base\Widget
 {
 
     public $model;
+    public $canEdit = false;
     
     public function run()
     {
@@ -28,7 +29,8 @@ class SnippetWidget extends \yii\base\Widget
         
         return $this->render('snippet_'.strtolower(Container::getLabel($this->model->type)), [
             'model' => $this->model,
-            'contentContainer' => $contentContainer]);
+            'contentContainer' => $contentContainer],
+            'canEdit', $this->canEdit);
     }
 
 }
